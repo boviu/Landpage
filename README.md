@@ -40,5 +40,9 @@ Marina Yumi Shinomiya Brugnoli - 3B
 Maycon Ryan Fontinele de Araújo - 3B
 
 
+Professora Orientadora:
+
+Nathane de Castro
+
 
 © 2026 Venti Comércio de Sensores Ltda.
