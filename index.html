@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zefir: Ar seguro e de qualidade</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        :root {
+            --primary-dark: #0c1c38;
+            --text-dark: #111111;
+            --text-muted: #5b6473;
+            --bg-light: #f8f9fa;
+            --bg-nav: #f1f3f5;
+            --border-color: #e9ecef;
+            --container-max-width: 1200px;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -18,25 +29,31 @@
         }
 
         body {
-            background-color: #f8f9fa;
+            background-color: var(--bg-light);
             color: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            text-align: justify
+            line-height: 1.6;
+            width: 100%;
+            overflow-x: hidden;
         }
 
         .site-container {
             width: 100%;
-            max-width: 900px;
             background: #ffffff;
-            padding: 20px 40px;
+        }
+
+        .content-wrapper {
+            width: 100%;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 5vw;
         }
 
         header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px 0 30px 0;
+            padding: 20px 0;
+            gap: 20px;
         }
 
         .logo-area {
@@ -52,17 +69,10 @@
             display: block;
         }
 
-        .logo-text {
-            font-weight: 600;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            color: #5b6473;
-        }
-
         nav {
-            background-color: #f1f3f5;
+            background-color: var(--bg-nav);
             padding: 8px 20px;
-            border-radius: 20px;
+            border-radius: 30px;
         }
 
         .nav-links {
@@ -77,51 +87,48 @@
         .nav-links a {
             text-decoration: none;
             color: #495057;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 500;
             transition: color 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: #111;
+            color: var(--text-dark);
         }
 
         .hero {
             text-align: center;
-            padding: 40px 0 40px 0;
+            padding: 50px 0 30px 0;
         }
 
         .hero h1 {
-            font-size: clamped-title;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 500;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 600;
             letter-spacing: -1px;
-            color: #111;
-            margin-bottom: 10px;
+            color: var(--text-dark);
+            margin-bottom: 12px;
         }
 
         .hero h2 {
-            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
             font-weight: 400;
-            color: #5b6473;
+            color: var(--text-muted);
         }
 
         .banner-mockups {
-            background-color: #0c1c38;
-            border-radius: 32px;
+            background-color: var(--primary-dark);
+            border-radius: 24px;
             padding: 40px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 60px;
-            overflow: hidden;
+            margin: 30px 0 60px 0;
         }
 
         .banner-mockups img {
             max-width: 100%;
             height: auto;
-            display: block;
-            border-radius: 20px;
+            border-radius: 16px;
         }
 
         section {
@@ -129,31 +136,32 @@
         }
 
         .section-title {
-            font-size: clamp(1.4rem, 4vw, 1.8rem);
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
             font-weight: 600;
-            color: #111;
-            margin-bottom: 20px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
             letter-spacing: -0.5px;
         }
 
         .divider {
             height: 1px;
-            background-color: #e9ecef;
+            background-color: var(--border-color);
             margin-bottom: 25px;
         }
 
         .text-body {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #555;
+            font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+            line-height: 1.7;
+            color: #4a5568;
             margin-bottom: 16px;
+            text-align: justify;
         }
 
         .image-banner {
             width: 100%;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
-            margin-top: 30px;
+            margin-top: 25px;
         }
 
         .image-banner img {
@@ -166,7 +174,7 @@
         .video-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%;
+            padding-bottom: 56.25%; 
             height: 0;
             overflow: hidden;
             border-radius: 16px;
@@ -186,7 +194,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            align-items: start;
+            align-items: center;
         }
 
         .about-header {
@@ -197,140 +205,123 @@
         }
 
         .about-header .logo-icon img {
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             object-fit: contain;
         }
 
-        .about-values-block {
-            margin-top: 30px;
-            border-top: 1px solid #e9ecef;
+        .about-values-block, .team-block {
+            margin-top: 25px;
+            border-top: 1px solid var(--border-color);
             padding-top: 20px;
         }
 
-        .about-values-block h3 {
-            font-size: 1.1rem;
+        .about-values-block h3, .team-block h3 {
+            font-size: 1.15rem;
             font-weight: 600;
-            margin-bottom: 20px;
-            color: #222;
+            margin-bottom: 15px;
+            color: var(--text-dark);
         }
 
         .value-item {
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             font-size: 0.98rem;
-            line-height: 1.5;
-            color: #555;
+            color: #4a5568;
         }
 
         .value-item strong {
-            color: #222;
-            font-weight: 600;
-        }
-
-        .team-block {
-            margin-top: 30px;
-            border-top: 1px solid #e9ecef;
-            padding-top: 20px;
-        }
-
-        .team-block h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #222;
+            color: var(--text-dark);
         }
 
         .contact-section {
             text-align: center;
-            padding-top: 20px;
+            padding: 40px 0;
+            background-color: #f8fafc;
+            border-radius: 24px;
+            margin-bottom: 40px;
         }
 
         .contact-section h2 {
-            font-size: clamp(1.6rem, 4vw, 2.2rem);
-            font-weight: 500;
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+            font-weight: 600;
             margin-bottom: 15px;
-            letter-spacing: -0.5px;
         }
 
         .contact-sub {
-            font-size: 0.92rem;
-            color: #666;
-            max-width: 520px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 600px;
             margin: 0 auto 20px auto;
-            line-height: 1.5;
         }
 
         .contact-info {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.92rem;
-            color: #444;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            font-size: 0.95rem;
+            color: #333;
+            margin-top: 20px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            word-break: break-word;
+            gap: 8px;
         }
 
         .contact-item i {
-            color: #777;
-            font-size: 1rem;
+            color: var(--text-muted);
         }
 
         footer {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
+            padding: 30px 0;
+            border-top: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
-            font-size: 0.8rem;
-            color: #aaa;
+            font-size: 0.85rem;
+            color: #888;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
         }
 
-        @media (max-width: 768px) {
-            .site-container {
-                padding: 15px 20px;
-            }
-
+        @media (max-width: 850px) {
             header {
                 flex-direction: column;
-                gap: 20px;
                 text-align: center;
-            }
-
-            .logo-area {
-                justify-content: center;
             }
 
             nav {
                 width: 100%;
             }
 
-            .nav-links {
-                gap: 12px 18px;
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-image {
+                order: -1; /* Coloca a imagem acima do texto no mobile se desejado */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-wrapper {
+                padding: 0 4vw;
             }
 
             .banner-mockups {
-                padding: 20px 15px;
-                margin-bottom: 40px;
-                border-radius: 20px;
+                padding: 20px 10px;
+                border-radius: 16px;
             }
 
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
+            .nav-links {
+                gap: 10px 15px;
             }
 
-            footer {
+            .contact-info {
                 flex-direction: column;
                 align-items: center;
-                text-align: center;
             }
         }
     </style>
@@ -338,131 +329,135 @@
 <body>
 
 <div class="site-container">
+    <div class="content-wrapper">
 
-    <header>
-        <div class="logo-area">
-            <div class="logo-icon">
-                <img src="zefir1.png" alt="Aplicativo Zefir">
+        <header>
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <img src="zefir1.png" alt="Aplicativo Zefir">
+                </div>
             </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#projeto">O projeto</a></li>
+                    <li><a href="#sensor">O sensor</a></li>
+                    <li><a href="#pitch">Vídeo Pitch</a></li>
+                    <li><a href="#sobre">Sobre nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero" id="inicio">
+            <h1>Ar seguro e de qualidade</h1>
+            <h2>Zefir: Detectando riscos, Protegendo vidas</h2>
+        </section>
+
+        <div class="banner-mockups">
+            <img src="imagem4.png" alt="Mockup Zefir">
         </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sensor">O sensor</a></li>
-                <li><a href="#pitch">Vídeo Pitch</a></li>
-                <li><a href="#sobre">Sobre nós</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero" id="inicio">
-        <h1>Ar seguro e de qualidade</h1>
-        <h2>Zefir: Detectando riscos, Protegendo vidas</h2>
-    </section>
+        <section id="projeto">
+            <h2 class="section-title">O projeto</h2>
+            <div class="divider"></div>
+            <p class="text-body">
+                O Gás Liquefeito de Petróleo (GLP), comumente conhecido como gás de cozinha, é amplamente utilizado por uma maioria esmagadora de pessoas. Segundo pesquisa publicada pela Sindigás, nove a cada dez brasileiros temem acidentes com gás de cozinha fracionado, tornando o tema extremamente relevante para a segurança nacional. A partir disso, criamos o Zefir: um sensor de gás e qualidade do ar integrado a um aplicativo. O sensor detecta vazamentos de gás e alerta o usuário imediatamente, podendo ser utilizado tanto em residências quanto em cozinhas profissionais. Além disso, dados da ASBAI indicam que cerca de 30% da população brasileira possui rinite, e a procura por umidificadores cresceu significativamente. Pensando nisso, incorporamos um sensor de umidade ao nosso sistema embarcado, permitindo acompanhar o conforto e a segurança do ambiente em tempo real.
+            </p>
+        </section>
+        
+        <section id="sensor">
+            <h2 class="section-title">O sensor: Zefir</h2>
+            <div class="divider"></div>
+            <p class="text-body">
+                O Sensor Zefir é um dispositivo inteligente que detecta vazamentos de gás e fecha a válvula automaticamente, prevenindo acidentes graves. Ele também monitora a qualidade do ar e a umidade, garantindo ambientes mais seguros e saudáveis.
+            </p>
+            <p class="text-body">
+                Com o App Zefir, você acompanha tudo em tempo real, recebendo alertas imediatos e relatórios completos direto no celular. É a união perfeita entre hardware e software, pensada para trazer tranquilidade às famílias e eficiência às empresas.
+            </p>
+            <div class="image-banner">
+                <img src="imagem2.png" alt="Ambiente de cozinha limpo e seguro">
+            </div>
+        </section>
 
-    <div class="banner-mockups">
-        <img src="imagem4.png" alt="Mockup Zefir">
-    </div>
-<section id="sensor">
-        <h2 class="section-title">O projeto</h2>
-        <div class="divider"></div>
-        <p class="text-body">
-            O Gás Liquefeito de Petróleo (GLP) comumente conhecido como gás de cozinha é amplamente utilizado por uma maioria esmagadora de pessoas, segundo a pesquisa publicada pela Sindigás, nove a cada dez brasileiros temem acidentes com gás de cozinha fracionado, sendo um tópico muito relevante para segurança dos brasileiros. A partir disso, criamos o Zefir, um sensor de gás e qualidade do ar integrado a um aplicativo, visando a segurança, esse sensor detecta vazamento de gás e alerta o indivíduo, podendo ser utilizado tanto em residências quanto em cozinhas profissionais. Além de que, segundo a ASBAI, cerca de 30% da população brasileira tem rinite, sendo que segundo a CNN, as vendas por umidificadores cresceram 665%, pensando nisso também colocamos um sensor de umidade no nosso sistema embarcado, integrado ao aplicativo, assim o usuário pode verificar se o ambiente está confortável e seguro. 
-        </p>
-    </section>
-    
-    <section id="sensor">
-        <h2 class="section-title">O sensor: Zefir</h2>
-        <div class="divider"></div>
-        <p class="text-body">
-            O Sensor Zefir é um dispositivo inteligente que detecta vazamentos de gás e fecha a válvula automaticamente, prevenindo acidentes graves. Ele também monitora a qualidade do ar e a umidade, garantindo ambientes mais seguros e saudáveis.
-        </p>
-        <p class="text-body">
-            Com o App Zefir, você acompanha tudo em tempo real, recebendo alertas imediatos e relatórios completos direto no celular. É a união perfeita entre hardware e software, pensada para trazer tranquilidade às famílias e eficiência às empresas.
-        </p>
-        <div class="image-banner">
-            <img src="imagem2.png" alt="Ambiente de cozinha limpo e seguro">
-        </div>
-    </section>
+        <section id="pitch">
+            <h2 class="section-title">Vídeo Pitch</h2>
+            <div class="divider"></div>
 
-    <section id="pitch">
-        <h2 class="section-title">Vídeo Pitch</h2>
-        <div class="divider"></div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/QV4SYtAsAQw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </section>
 
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/QV4SYtAsAQw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <section id="sobre">
-        <div class="about-grid">
-            <div class="about-content">
-                <div class="about-header">
-                    <div class="logo-icon">
-                        <img src="logo3.png" alt="Logo Zefir">
+        <section id="sobre">
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="about-header">
+                        <div class="logo-icon">
+                            <img src="logo3.png" alt="Logo Zefir">
+                        </div>
+                        <h2 class="section-title" style="margin-bottom: 0;">Sobre nós</h2>
                     </div>
-                    <h2 class="section-title" style="margin-bottom: 0;">Sobre nós</h2>
-                </div>
 
-                <p class="text-body">
-                    Na Zefir, acreditamos que inovação só faz sentido quando melhora a vida das pessoas. Somos uma empresa formada por jovens empreendedores apaixonados por tecnologia e comprometidos em criar soluções que unem segurança, saúde e bem-estar.
-                </p>
-
-                <div class="about-values-block">
-                    <h3>Nossos valores</h3>
-                    <div class="value-item">
-                        <strong>Missão:</strong> desenvolver dispositivos inteligentes que previnam acidentes e promovam ambientes mais saudáveis.
-                    </div>
-                    <div class="value-item">
-                        <strong>Visão:</strong> Ser reconhecida como referência em tecnologia acessível e confiável para segurança doméstica e empresarial.
-                    </div>
-                    <div class="value-item">
-                        <strong>Valores:</strong> Inovação, responsabilidade, confiança, cuidado com as pessoas e compromisso com a qualidade.
-                    </div>
-                </div>
-
-                <div class="team-block">
-                    <h3>Nossa equipe</h3>
                     <p class="text-body">
-                        A Zefir nasceu dentro de um projeto acadêmico, mas cresceu como uma marca que reflete a dedicação de um grupo unido. Cada integrante contribui com sua criatividade e conhecimento, transformando ideias em soluções reais.
+                        Na Zefir, acreditamos que inovação só faz sentido quando melhora a vida das pessoas. Somos uma empresa formada por jovens empreendedores apaixonados por tecnologia e comprometidos em criar soluções que unem segurança, saúde e bem-estar.
                     </p>
+
+                    <div class="about-values-block">
+                        <h3>Nossos valores</h3>
+                        <div class="value-item">
+                            <strong>Missão:</strong> desenvolver dispositivos inteligentes que previnam acidentes e promovam ambientes mais saudáveis.
+                        </div>
+                        <div class="value-item">
+                            <strong>Visão:</strong> Ser reconhecida como referência em tecnologia acessível e confiável para segurança doméstica e empresarial.
+                        </div>
+                        <div class="value-item">
+                            <strong>Valores:</strong> Inovação, responsabilidade, confiança, cuidado com as pessoas e compromisso com a qualidade.
+                        </div>
+                    </div>
+
+                    <div class="team-block">
+                        <h3>Nossa equipe</h3>
+                        <p class="text-body">
+                            A Zefir nasceu dentro de um projeto acadêmico, mas cresceu como uma marca que reflete a dedicação de um grupo unido. Cada integrante contribui com sua criatividade e conhecimento, transformando ideias em soluções reais.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <div class="image-banner" style="margin-top: 0;">
+                        <img src="imagem3.png" alt="Escritório/Cozinha moderna">
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="about-image">
-                <div class="image-banner" style="margin-top: 0;">
-                    <img src="imagem3.png" alt="Escritório/Cozinha moderna">
+        <section class="contact-section" id="contato">
+            <h2>Desfrute de ar seguro e de qualidade</h2>
+            <p class="contact-sub">
+                Entre em contato com nossa equipe para requisitar projetos, fechar negócios ou se cadastrar no sistema.
+            </p>
+            <p class="contact-sub">
+                <strong>Integrantes:</strong> Aurora Santos Gonçalves, Letícia Anti de Freitas Andrade, Lorena Rodrigues Marinho, Marina Yumi Shinomiya Brugnoli, Maycon Ryan Fontinele de Araújo.
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>E-mail: contato@zefir.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Telefone: (11) 91234-5678</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="contact-section" id="contato">
-        <h2>Desfrute de ar seguro e de qualidade</h2>
-        <p class="contact-sub">
-            Entre em contato com nossa equipe para requisitar projetos, fechar negócios ou se cadastrar no sistema.
-        </p>
-        <p class="contact-sub">
-            <strong>Integrantes:</strong> Aurora Santos Gonçalves, Letícia Anti de Freitas Andrade, Lorena Rodrigues Marinho, Marina Yumi Shinomiya Brugnoli, Maycon Ryan Fontinele de Araújo.
-        </p>
-        <div class="contact-info">
-            <div class="contact-item">
-                <i class="fa-regular fa-envelope"></i>
-                <span>E-mail: contato@zefir.com</span>
-            </div>
-            <div class="contact-item">
-                <i class="fa-solid fa-phone"></i>
-                <span>Telefone: (11) 91234-5678</span>
-            </div>
-        </div>
-    </section>
+        <footer>
+            <span>© Venti Comércio de Sensores Ltda.</span>
+            <span>2026</span>
+        </footer>
 
-    <footer>
-        <span>© Venti Comércio de Sensores Ltda.</span>
-        <span>2026</span>
-    </footer>
-
+    </div>
 </div>
 
 </body>
