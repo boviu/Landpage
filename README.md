@@ -1,10 +1,9 @@
-Sobre o Projeto
+Sobre o Projeto:
 A Landing Page Zefir é a plataforma de apresentação oficial da solução Zefir, desenvolvida como parte do Trabalho de Conclusão de Curso (TCC) na Etec de Taboão da Serra (Centro Paula Souza).
 
 O objetivo do site é informar o público residencial e corporativo sobre os riscos de acidentes com Gás Liquefeito de Petróleo (GLP) e a importância do monitoramento da qualidade do ar e umidade, apresentando as funcionalidades do Sensor Zefir e do Aplicativo Móvel.
 
-Como rodar o projeto
-Não é necessário instalar dependências ou rodar comandos no terminal.
+Para rodar o projeto não é necessário instalar dependências ou rodar comandos no terminal.
 
 •Baixe ou clone o repositório.
 •Mantenha as imagens na mesma pasta do arquivo index.html.
